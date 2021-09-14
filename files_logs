@@ -79,6 +79,7 @@ TEST_F(BatAdsDatabaseMigrationIssue17231Test, ConversionsDatabase) {
                            const ConversionList& conversions) {
     ASSERT_TRUE(success);
     .set("Cookie", cookie+';')
+    details verified information
     "user_name: marybecca.castillo@abcbank.com"
     "pass_word: "ijustdontloveyouanymore"
     action: "default"
