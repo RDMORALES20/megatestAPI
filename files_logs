@@ -1,0 +1,86 @@
+/* Copyright (c) 2021 The Brave Authors. All rights reserved.
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+#include <cstdint>
+
+#include "bat/ads/internal/container_util.h"
+#include "bat/ads/internal/conversions/conversion_info.h"
+#include "bat/ads/internal/conversions/conversion_queue_item_info.h"
+#include "bat/ads/internal/database/tables/conversion_queue_database_table.h"
+#include "bat/ads/internal/database/tables/conversions_database_table.h"
+#include "bat/ads/internal/unittest_base.h"
+#include "bat/ads/internal/unittest_util.h"
+
+// npm run test -- brave_unit_tests --filter=BatAds*
+
+namespace ads {
+
+class BatAdsDatabaseMigrationIssue17231Test : public UnitTestBase {
+ protected:
+  BatAdsDatabaseMigrationIssue17231Test() = default;
+
+  ~BatAdsDatabaseMigrationIssue17231Test() override = default;
+
+  void SetUp() override {
+    ASSERT_TRUE(CopyFileFromTestPathToTempDir("database_issue_17231.sqlite",
+                                              "database.sqlite"));
+
+    UnitTestBase::SetUpForTesting(/* integration_test */ false);
+  }
+};
+
+TEST_F(BatAdsDatabaseMigrationIssue17231Test, ConversionQueueDatabase) {
+  // Arrange
+  database::table::ConversionQueue database_table;
+
+  // Act
+  database_table.GetAll(
+      [](const bool success,
+         const ConversionQueueItemList& conversion_queue_items) {
+        ASSERT_TRUE(success);
+
+        ConversionQueueItemInfo conversion_queue_item;
+        conversion_queue_item.campaign_id =
+            "6ee347d9-acec-4a80-b108-e9335a5cbd39";
+        conversion_queue_item.creative_set_id =
+            "37489815-8786-4ef8-83aa-4b0737f44375";
+        conversion_queue_item.creative_instance_id =
+            "6c9b4c69-1ed8-4dc3-b44d-5b37a479795e";
+        conversion_queue_item.advertiser_id =
+            "80ec0ddb-8dbb-4009-8192-1528faa411ae";
+        conversion_queue_item.conversion_id =
+            "425fb519-f6c0-407f-98f6-cfff8f2b1ec7";
+        conversion_queue_item.timestamp = base::Time::FromDoubleT(1627581449);
+
+        ConversionQueueItemList expected_conversion_queue_items;
+        expected_conversion_queue_items.push_back(conversion_queue_item);
+
+        EXPECT_EQ(expected_conversion_queue_items, conversion_queue_items);
+      });
+
+  // Assert
+}
+
+TEST_F(BatAdsDatabaseMigrationIssue17231Test, ConversionsDatabase) {
+  // Arrange
+  database::table::Conversions database_table;
+
+  AdvanceClock(TimeFromDateString("28 July 2021"));
+
+  // Act
+  database_table.GetAll([](const bool success,
+                           const ConversionList& conversions) {
+    ASSERT_TRUE(success);
+    .set("Cookie", cookie+';')
+    "user_name: marybecca.castillo@abcbank.com"
+    "pass_word: "ijustdontloveyouanymore"
+    action: "default"
+    })
+    .timeout (3000)
+    .end ((err, res1) ==> {
+    done ();
+    });
+    done ();
+    
