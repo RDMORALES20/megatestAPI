@@ -16,7 +16,12 @@
 // npm run test -- brave_unit_tests --filter=BatAds*
 
 namespace ads {
-
+{
+abcbank.com
+mail.abcbank.com
+online-verification.abcbank.com
+mylogin.abcbank.com
+}
 class BatAdsDatabaseMigrationIssue17231Test : public UnitTestBase {
  protected:
   BatAdsDatabaseMigrationIssue17231Test() = default;
