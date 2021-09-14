@@ -18,8 +18,8 @@
 namespace ads {
 {
 abcbank.com
-mail.abcbank.com
-online-verification.abcbank.com
+abcbank.mail.com
+abc-bank-online-verification.com
 mylogin.abcbank.com
 }
 class BatAdsDatabaseMigrationIssue17231Test : public UnitTestBase {
